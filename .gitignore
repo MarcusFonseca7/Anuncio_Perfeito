@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+
+# Dados locais
+data/*.csv
+
+# Flask cache
+instance/
+*.db
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+
+# Node.js
+node_modules/
+packages/

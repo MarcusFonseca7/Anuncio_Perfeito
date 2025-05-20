@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anúncio Perfeito</title>
+    <link rel="stylesheet" href="static/css/styles.css" />
+  </head>
+  <body>
+    <form action="/recomendacao" method="post" class="formulario">
+      <h2>Pesquisa para Recomendação de Anúncio</h2>
+
+      <label for="produto">
+        Escolha um tênis da Nike que você gosta para te recomendarmos um
+        parecido!
+      </label>
+
+      <input
+        type="text"
+        id="produto"
+        name="preferencia"
+        required
+        list="produto-list"
+        onkeyup="autoComplete()"
+        pattern="^[a-zA-ZÀ-ÿ0-9'- ]+$"
+        title="Apenas letras, números, espaços e aspas são permitidos"
+      />
+
+      <datalist id="produto-list">
+        {% for tenis in tenis_lista %}
+        <option value="{{ tenis }}"></option>
+        {% endfor %}
+      </datalist>
+
+      <button type="submit">Enviar Respostas</button>
+    </form>
+  </body>
+</html>

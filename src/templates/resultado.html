@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultados da Recomendação</title>
+    <link rel="stylesheet" href="static/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Resultados da Recomendação</h2>
+
+      {% if recomendacoes %}
+      <div class="origem">
+        {% if origem == 'internet' %}
+        <p>
+          <strong>Fonte:</strong> Resultados obtidos da internet (Sneaks-API)
+        </p>
+        {% else %}
+        <p><strong>Fonte:</strong> Resultados obtidos localmente com KNN</p>
+        {% endif %}
+      </div>
+
+      <p>
+        Baseado nas suas preferências, encontramos os seguintes tênis
+        recomendados:
+      </p>
+      <ul>
+        {% for tenis in recomendacoes %}
+        <li class="recomendacao">
+          {% if tenis['imagem'] is defined %}
+          <img src="{{ tenis['imagem'] }}" alt="Imagem do tênis" />
+          {% endif %}
+          <div class="recomendacao-info">
+            <strong>Nome:</strong> {{ tenis['nome'] }} <br />
+            <strong>Categoria:</strong> {{ tenis['categoria'] }} <br />
+            <strong>Modelo:</strong> {{ tenis['descricao'] }} <br />
+            {% if tenis['chance_acerto'] is defined %}
+            <strong>Chance de acerto:</strong> {{ tenis['chance_acerto'] |
+            round(2) }}% <br />
+            {% endif %} {% if tenis['preco'] is defined %}
+            <strong>Preço:</strong> R$ {{ tenis['preco'] }} <br />
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="modelo">
+        <p>Não encontramos recomendações para sua pesquisa.</p>
+      </div>
+      {% endif %}
+
+      <a href="/" class="botao">Voltar para a recomendação</a>
+    </div>
+  </body>
+</html>
