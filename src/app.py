@@ -88,7 +88,7 @@ def recomendacao():
     if request.method == "POST":
         preferencia = request.form['preferencia']
         
-        if not re.match(r"^[a-zA-ZÀ-ÿ0-9'\- ]+$", preferencia):
+        if not re.match(r"^[a-zA-Z0-9'\-+. ]+$", preferencia):
             return render_template('resultado.html', recomendacoes=[], mensagem="Entrada inválida: use apenas letras e números.")
         
         # Tenta Sneaks-API primeiro
