@@ -42,4 +42,6 @@ Isso iniciará um servidor local em http://localhost:3000.
 ### 5. Inicie o servidor Flask
 - Em outra aba do terminal ("Terminal"-> "New Terminal") e com o ambiente virtual ainda ativado: cd ./src 
 - python app.py
+- ctrl + click no link onde está "Running on http://127.0.0.1:5000"
+- Abra o navegador e o projeto estará funcionando!
 
