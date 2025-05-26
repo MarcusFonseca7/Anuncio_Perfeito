@@ -16,29 +16,30 @@ Este é um projeto de recomendação personalizada de tênis utilizando **Flask*
 ## 🚀 Como executar
 
 ### 1. Clone este repositório
-- git clone https://github.com/MarcusFonseca7/Anuncio_Perfeito.git
-- cd ./Anuncio_Perfeito/src
+- Escolha a opção no VSCode "Clone Repository" ou escreva no terminal "git clone https://github.com/MarcusFonseca7/Anuncio_Perfeito.git"
+- Escolha aonde quer armazenar a pasta na sua máquina.
 
 ### 2. Crie e ative o ambiente virtual
-   
   a. Windows:
   - python -m venv venv
   - venv\Scripts\activate
 
-  
   b. Linux/Mac:
   - python3 -m venv venv  
   - source venv/bin/activate  
 
-### 3. Instale as dependências Python
+### 3. Instale as dependências 
 - pip install -r requirements.txt
+- npm install (ou npm i)
 
 ### 4. Instale e rode a Sneaks-API
 - (A Sneaks-API precisa do Node.js instalado. Instale por favor!)
 - npm install -g sneaks-api
-- sneaks-api-server
+- cd ./src/static/script
+- node server.js (Inicializará o servidor da API)
 Isso iniciará um servidor local em http://localhost:3000.
 
 ### 5. Inicie o servidor Flask
-- Em outra aba do terminal (com o ambiente virtual ainda ativado): "python app.py"
+- Em outra aba do terminal ("Terminal"-> "New Terminal") e com o ambiente virtual ainda ativado: cd ./src 
+- python app.py
 
